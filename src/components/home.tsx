@@ -59,29 +59,49 @@ const WeatherPanel = ({ name, unit }: WeatherPanelProps) => {
 
   return (
     <div className="grid grid-cols-1 gap-6 ">
-      <div className=" p-5">
-        <div className="flex items-center gap-20">
-          <div className="w-1/3 flex justify-center">
-            <div className="p-3 rounded-full bg-primary/10">
-              <Sun size={50} className="text-amber-300" />
+      <div className="p-6">
+        <div className="flex justify-evenly items-center space-x-4">
+          {/* Icon Sction */}
+          <div className="flex-shrink-0">
+            <div className="w-26 h-26 rounded-2xl bg-gradient-to-br from-amber-400/20 to-orange-500/20 flex items-center justify-center">
+              <Sun size={80} className="text-amber-300" />
             </div>
           </div>
-          <div className="w-2/3 flex">
-            <div>
-              <h3 className="font-semibold text-2xl gap-2 flex">
+          {/* Content Section */}
+
+          <div className="grid grid-cols-1 items-center min-w-0">
+            {/* Location Icon */}
+            <div className="flex items-center gap-1 mb-1">
+              <MapPin size={14} className="text-muted-foreground" />
+              <h3 className="font-semibold text-lg capitalize truncate">
                 {weather?.name}
               </h3>
-              <p className="text-muted-foreground">
-                {weather?.main.temp} Celsius
-              </p>
-              <p>
-                <span>Low </span>
-                {weather?.main.temp_min}
-              </p>
-              <p>
-                <span>High </span>
-                {weather?.main.temp_max}
-              </p>
+            </div>
+            {/* Temp hero element */}
+            <div className="mb-2">
+              <span className="text-3xl font-bold">
+                {Math.round(weather?.main.temp) || 0}°
+              </span>
+              <span className="text-sm text-muted-foreground ml-1">C</span>
+            </div>
+            {/* Weather Description */}
+            <p className="text-sm text-muted-foreground capitalize mb-2">
+              {weather?.weather[0]?.description}
+            </p>
+            {/* High / Low */}
+            <div className="flex gap-4 text-sm">
+              <span className="text-muted-foreground">
+                H:{" "}
+                <span className="front-medium">
+                  {Math.round(weather?.main.temp_max)}°
+                </span>
+              </span>
+              <span className="text-muted-foreground">
+                L:{" "}
+                <span className="front-medium">
+                  {Math.round(weather?.main.temp_min)}°
+                </span>
+              </span>
             </div>
           </div>
         </div>
