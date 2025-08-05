@@ -14,6 +14,7 @@ A simple weather application built with React, TypeScript, and Vite that display
 - **React 19** - UI library
 - **TypeScript** - Type safety
 - **Vite** - Build tool and dev server
+- **Tailwind CSS v4** - Utility-first CSS framework with modern theming
 - **Axios** - HTTP client for API requests
 - **OpenWeatherMap API** - Weather data source
 

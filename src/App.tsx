@@ -1,13 +1,16 @@
 import "./App.css";
-import Weather from "./components/weather";
+
 import { Header } from "./components/header";
+
+import { Home } from "./components/home";
 
 function App() {
   return (
     <>
       <Header />
-      <h1>Weather App</h1>
-      <Weather />
+      <Home />
+      {/* <h1>Weather App</h1> */}
+      {/* <Weather /> */}
     </>
   );
 }
