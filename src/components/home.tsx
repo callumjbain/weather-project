@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getWeatherByCity } from "../api/weather";
 import { MapPin, Sun } from "lucide-react";
 
-interface WeatherData {
+interface OneDayForecastData {
   name: string;
   weather: { description: string }[];
   main: { temp: number; temp_min: number; temp_max: number };
@@ -45,7 +45,7 @@ interface WeatherPanelProps {
 }
 
 const WeatherPanel = ({ name, unit }: WeatherPanelProps) => {
-  const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [weather, setWeather] = useState<OneDayForecastData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {

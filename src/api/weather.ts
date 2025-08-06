@@ -28,3 +28,16 @@ export const getWeatherByCity = async (q: string, units?: string) => {
   });
   return response.data;
 };
+
+export const getFiveDayForecast = async () => {
+  const response = await apiClient.get("forecast", {
+    params: {
+      lat: 44.34,
+      lon: 10.99,
+      appId: apiKey,
+      units: "metric",
+      cnt: 10,
+    },
+  });
+  return response.data;
+};

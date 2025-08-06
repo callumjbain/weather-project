@@ -1,4 +1,5 @@
 import "./App.css";
+import { FiveDayForecast } from "./components/forecast";
 
 import { Header } from "./components/header";
 
@@ -9,6 +10,7 @@ function App() {
     <>
       <Header />
       <Home />
+      <FiveDayForecast />
       {/* <h1>Weather App</h1> */}
       {/* <Weather /> */}
     </>
