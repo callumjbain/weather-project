@@ -21,14 +21,27 @@ export const FiveDayForecast = () => {
   return (
     <section id="forecast" className="py-24 px-4 relative">
       <h2 className="text-4xl pb-10">Five Day Summary</h2>
-      {Object.entries(weather)
-        // .slice(0, 8)
-        .map(([dt, entry]) => (
-          <p key={dt} className="flex justify-center">
-            Time: {new Date(parseInt(dt) * 1000).toLocaleString()}
-            {Math.round(entry.main.temp)} Degrees
-          </p>
+      <div className="grid grid-cols-1 md:grid-cold-5 gap-4">
+        {weather.map((day, index) => (
+          <div
+            key={index}
+            className="bg-panel/60 p-4 rounded-lg hover:bg-panel/90 shadow"
+          >
+            <h3 className="text-3xl font-semibold">{day.date}</h3>
+            <div className="flex justify-center">
+              <p className="text-primary px-2">
+                <span>Low: </span>
+                {Math.round(day.minTemp)}
+              </p>
+              <p className="text-primary px-2">
+                <span>High: </span>
+                {Math.round(day.maxTemp)}
+              </p>
+            </div>
+            <p className="text-sm">{day.condition}</p>
+          </div>
         ))}
+      </div>
     </section>
   );
 };

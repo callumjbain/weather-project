@@ -3,7 +3,7 @@ import { cn } from "../lib/utils";
 
 const navItems = [
   { nane: "Home", href: "#home" },
-  { name: "7 Day Forecast", href: "#forecast" },
+  { name: "Five Day Forecast", href: "#forecast" },
   { name: "Polution", href: "#polution" },
   { name: "Time Machine", href: "#timemachine" },
 ];

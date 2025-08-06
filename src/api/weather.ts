@@ -36,7 +36,6 @@ export const getFiveDayForecast = async () => {
       lon: 10.99,
       appId: apiKey,
       units: "metric",
-      cnt: 10,
     },
   });
   return response.data;
